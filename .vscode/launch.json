@@ -9,7 +9,7 @@
             "stopAtEntry": false,
             "externalConsole": true,
             "cwd": "c:/PS/sleepteacher-s-PS-notenook",
-            "program": "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+            "program": "${fileDirname}\\build\\$main.exe",
             "MIMode": "gdb",
             "miDebuggerPath": "gdb",
             "setupCommands": [
