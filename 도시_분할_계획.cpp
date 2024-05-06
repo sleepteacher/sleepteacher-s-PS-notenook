@@ -27,6 +27,7 @@ int main() {
         G[c].push_back({a, b});
         
     }
+    
 
     return 0;
 }
