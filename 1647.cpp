@@ -15,7 +15,7 @@ int main() {
     cout.tie(NULL);
     ios::sync_with_stdio(false);
 
-   // vector<vector<pair<int, int>>> G(100001,{{0,0}});
+    vector<vector<pair<int, int>>> G(100001);
     int i, j, k, l, N, M;
 
     //cin >> N >> M;
