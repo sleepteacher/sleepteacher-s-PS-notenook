@@ -105,8 +105,9 @@ int main() {
         }
     }
     cin >> T;
+    mode = 1;
     for (i = 0; i < T; i++) {
-        cin >> mode;
+        // cin >> mode;
         if (mode - 1) {
             cin >> a >> b >> c;
             cout << LCA(a, b, c, mode) << "\n";
