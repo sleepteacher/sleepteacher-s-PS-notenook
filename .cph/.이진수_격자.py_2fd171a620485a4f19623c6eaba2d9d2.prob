@@ -1,0 +1,1 @@
+{"name":"Local: 이진수_격자","url":"c:\\PS\\sleepteacher-s-PS-notenook\\이진수_격자.py","tests":[{"id":1716721258634,"input":"5\n1 0 0 0 0\n0 1 0 0 0\n0 0 1 0 0\n0 0 0 1 0\n0 0 0 0 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\PS\\sleepteacher-s-PS-notenook\\이진수_격자.py","group":"local","local":true}
