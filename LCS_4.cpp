@@ -2,41 +2,31 @@
 
 using namespace std;
 
-int forigin[100001], sorigin[100001], freget[100001], sreget[100001];
+int forigin[100001], sidx[100001], dp[100001], reget[100001], idx_table[100001], result[100001];
 
 int main() {
 	cin.tie(NULL);
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
-	int i, j, k, l, N;
-	vector<int> result, dp, re;
+	int i, j, k, l, N, idx, input, op = 0;
+	vector<int> dp;
 	cin >> N;
 	for (i = 0; i < N; i++) {
 		cin >> forigin[i];
+		idx_table[forigin[i]] = i;
 	}
 	for (i = 0; i < N; i++) {
-		cin >> sorigin[i];
+		cin >> input;
+		sidx[i] = idx_table[input];
 	}
 	for (i = 0; i < N; i++) {
-		int loca = lower_bound(dp.begin(), dp.end(), forigin[i]) - dp.begin();
+		int loca = lower_bound(dp.begin(), dp.end(), sidx[i]) - dp.begin();
 		if (loca == dp.size()) {
-			dp.push_back(forigin[i]);
+			dp.push_back(sidx[i]);
 		} else {
-			dp[loca] = forigin[i];
+			dp[loca] = sidx[i];
 		}
-		freget[i
-		
-		] = loca;
-	}
-	dp = vector<int>(0);
-	for (i = 0; i < N; i++) {
-		sorigin[i] = sreget[sorigin[i]];
-		int loca = lower_bound(dp.begin(), dp.end(), sorigin[i]) - dp.begin();
-		if (loca == dp.size()) {
-			dp.push_back(sorigin[i]);
-		} else {
-			dp[loca] = sorigin[i];
-		}
+		reget[i] = loca;
 	}
 	cout << dp.size() << "\n";
 
