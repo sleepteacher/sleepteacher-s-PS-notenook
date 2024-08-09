@@ -1,63 +1,52 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+vector<string> a(50);
+int graph[50][50], visited[50][50], dx[6] = {0, 1, -1, 1, -1, 0}, dy[6] = {-1, -1, 0, 0, 1, 1}, N;
 
-int dp[51][51], dx[3] = {0, 1, -1}, dy[3] = {-1, -1, 0};
+int dfs(int y, int x, int val) {
+	int i, j, k, l, nx, ny, cnt = 1;
+	if (visited[y][x]) {
+		return 0;
+	}
+	graph[y][x] = val;
+	visited[y][x] = 1;
+	for (i = 0; i < 6; i++) {
+		nx = dx[i] + x, ny = dy[i] + y;
+		if (nx < 0 || ny < 0 || ny == N || nx == N) continue;
+		if (graph[ny][nx] == val) {
+			cout << 3 << "\n";
+			exit(0);
+		}
+		if (a[ny][nx] == 'X' && !visited[ny][nx]) {
+			dfs(ny, nx, (val + 1) % 2);
+			cnt = 2;
+		} else {
+			visited[ny][nx] = 1;
+		}
+	}
+	return cnt;
+}
 
 int main() {
 	cin.tie(NULL);
 	cout.tie(NULL);
 	ios::sync_with_stdio(false);
-	vector<string> a(50);
-	int i, j, k, l, N, result = 0, iter;
+
+	queue<pair<int, int>> Q;
+	int i, j, k, l, result = 0;
 	cin >> N;
 	for (i = 0; i < N; i++) {
 		cin >> a[i];
+		fill(graph[i], graph[i] + 50, -1);
 	}
-	/*
-	간섭 영역
-	1,1 기준
-	0,1 0,2
-	1,0 1,2
-	2,0 2,1
-	dp[y-1][x], dp[y-1][x+1],dp[y][x-1], dp[y][x+1], dp[y+1][x-1],dp[y+1][x]
-	풀이 방식 -> x축 기준 1자로 탐색함. 따라서 dp[y-1][x], dp[y-1][x+1],dp[y][x-1] 영역만 탐색함.
-	*/
 	for (i = 0; i < N; i++) {
 		for (j = 0; j < N; j++) {
-			if (a[i][j] == 'X') {
-				set<int> pp;
-				iter = 0;
-				for (k = 0; k < 3; k++) {
-					if (i + dy[k] < 0 || j + dx[k] < 0 || j + dx[k] == N) continue;
-					pp.insert(dp[i + dy[k]][j + dx[k]]);
-				}
-				iter = pp.size() + 1;
-				if (pp.find(0) != pp.end()) {
-					iter--;
-				}
-				if (iter > result) {
-					result++;
-					dp[i][j] = result;
-				} else {
-					for (k = 1; k <= iter; k++) {
-						if (pp.find(k) == pp.end()) {
-							dp[i][j] = k;
-							break;
-						}
-					}
-				}
-			}
+			if (graph[i][j] == -1 && !visited[i][j] && a[i][j] == 'X') result = max(dfs(i, j, 0), result);
 		}
-    }
+	}
+
 	cout << result << "\n";
-	
-	for (i = 0; i < N; i++) {
-		for (j = 0; j < N; j++) {
-			cout << dp[i][j] << " ";
-		}
-		cout << "\n";
-	}
-	
+
 	return 0;
 }

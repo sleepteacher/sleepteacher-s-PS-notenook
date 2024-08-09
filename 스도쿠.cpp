@@ -15,8 +15,12 @@ void DFS(int x, int y, int depth) {
 	if (con) return;
 	if (depth == 81) {
 		con++;
-		for (int i = 0; i < 9; i++) {
-			cout << arr[i] << "\n";
+		int i, j, k, l;
+		for (i = 0; i < 9; i++) {
+			for (j = 0; j < 9; j++) {
+				cout << arr[i][j] << " ";
+			}
+			cout << "\n";
 		}
 		return;
 	}
@@ -47,7 +51,9 @@ int main() {
 	ios::sync_with_stdio(false);
 	int i, j, k, l;
 	for (i = 0; i < 9; i++) {
-		cin >> arr[i];
+		for (j = 0; j < 9; j++) {
+			cin >> arr[i][j];
+		}
 	}
 	for (i = 0; i < 9; i++) {
 		for (j = 0; j < 9; j++) {

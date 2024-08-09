@@ -1,0 +1,1 @@
+{"name":"Local: ucpc","url":"c:\\PS\\sleepteacher-s-PS-notenook\\ucpc.cpp","tests":[{"id":1720846941366,"input":"1\n6\nTHTTHT","output":"12"},{"id":1720848577441,"input":"1\n5\nTTHTT\n","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\PS\\sleepteacher-s-PS-notenook\\ucpc.cpp","group":"local","local":true}
