@@ -2,8 +2,8 @@
 
 using namespace std;
 
-int arr[720][702];
-bool visited[702];
+int arr[78][78];
+bool visited[78];
 
 int main() {
 	cin.tie(NULL);
@@ -22,14 +22,15 @@ int main() {
 	}
 	for (i = 0; i < 29; i++) {
 		if (!visited[start]) {
+			sw = 77;
 			visited[start] = 1;
-			sw = 71;
-			for (j = 70; j > -1; j--) {
+			for (j = 76; j > -1; j--) {
 				if (arr[start][sw] <= arr[start][j]) {
 					sw = j;
 				}
 			}
 			char L = (char)('-' + sw);
+
 			f_op += L;
 			start += sw + '-';
 			if (sw + '-' != ']') {
@@ -42,12 +43,12 @@ int main() {
 			break;
 		}
 	}
-	fill(visited, visited + 702, 0);
-	for (i = 0; i < 29; i++) {
+	fill(visited, visited + 78, 0);
+	for (i = 0; i < 29 && !con; i++) {
 		if (!visited[start]) {
 			visited[start] = 1;
-			sw = 100;
-			for (j = 99; j > -1; j--) {
+			sw = 77;
+			for (j = 76; j > -1; j--) {
 				if (arr[start][sw] <= arr[start][j]) {
 					sw = j;
 				}

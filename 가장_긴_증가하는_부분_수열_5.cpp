@@ -3,6 +3,7 @@
 using namespace std;
 
 int origin[1000001], reget[1000001];
+int origin[1000001];
 main() {
 	cin.tie(NULL);
 	cout.tie(NULL);
@@ -12,6 +13,9 @@ main() {
 
 	fill(origin, origin + 1000001, -1);
 	fill(reget, reget + 1000001, -1);
+	vector<int> result, dp, re;
+
+	fill(origin, origin + 1000001, -1);
 	cin >> N;
 	for (i = 0; i < N; i++) {
 		cin >> origin[i];
@@ -38,6 +42,10 @@ main() {
 	cout << dp.size() << "\n";
 	for (i = 0; i < dp.size(); i++) {
 		cout << result[i] << " ";
+	}
+	cout << dp.size() << "\n";
+	for (i = 0; i < dp.size(); i++) {
+		cout << dp[i] << " ";
 	}
 
 	return 0;

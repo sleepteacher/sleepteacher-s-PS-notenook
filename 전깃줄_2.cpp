@@ -50,6 +50,10 @@ main() {
 	for (i = result.size() - 1; i >= 0; i--) {
 		cout << result[i] << "\n";
 	}
+	for (i = 0; i < result.size(); i++) {
+		cout << result[i] << "\n";
+	}
+	
 
 	return 0;
 }

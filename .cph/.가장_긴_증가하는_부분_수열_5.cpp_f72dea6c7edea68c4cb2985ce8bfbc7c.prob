@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"name":"가장 긴 증가하는 부분 수열 5","group":"Baekjoon Online Judge","url":"https://www.acmicpc.net/problem/14003","interactive":false,"memoryLimit":512,"timeLimit":3000,"tests":[{"id":1716956302385,"input":"6\n10 20 10 30 20 50","output":"4\n10 20 30 50"}],"testType":"single","input":{"type":"stdin"},"output":{"type":"stdout"},"languages":{"java":{"mainClass":"Main","taskClass":"Task"}},"batch":{"id":"a6508a65-1a94-4b6f-b510-a0401063ae26","size":1},"srcPath":"c:\\PS\\sleepteacher-s-PS-notenook\\가장_긴_증가하는_부분_수열_5.cpp"}
+=======
+{"name":"가장 긴 증가하는 부분 수열 5","group":"Baekjoon Online Judge","url":"https://www.acmicpc.net/problem/14003","interactive":false,"memoryLimit":512,"timeLimit":3000,"tests":[{"id":1716935797531,"input":"6\n10 20 10 30 20 50","output":"4\n10 20 30 50"}],"testType":"single","input":{"type":"stdin"},"output":{"type":"stdout"},"languages":{"java":{"mainClass":"Main","taskClass":"Task"}},"batch":{"id":"d93d2bfc-b78c-4753-932d-d54cd4e86728","size":1},"srcPath":"c:\\PS\\sleepteacher-s-PS-notenook\\가장_긴_증가하는_부분_수열_5.cpp"}
+>>>>>>> 9e065618bc52eb843bd6d73b8affa37368f7d486
